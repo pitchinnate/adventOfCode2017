@@ -33,7 +33,6 @@ func getSums(ints []int, lookAhead int) int {
 
 func day1_part1() {
 	ints := getInput()
-	ints = append(ints, ints[0])
 	total := getSums(ints, 1)
 	log.Print("Part 1 Output:")
 	log.Print(total)
@@ -41,8 +40,7 @@ func day1_part1() {
 
 func day1_part2() {
 	ints := getInput()
-	lookAhead := len(ints) / 2
-	total := getSums(ints, lookAhead)
+	total := getSums(ints, (len(ints) / 2))
 	log.Print("Part 2 Output:")
 	log.Print(total)
 }
