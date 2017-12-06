@@ -30,36 +30,22 @@ func day2_part2() {
 
 func findDivisors(numbers []int) int {
 	for x := 0; x < (len(numbers) - 1); x++ {
-		for y := (x+1); y < len(numbers); y++ {
+		for y := (x + 1); y < len(numbers); y++ {
 			var bigNumber int
 			var smallNumber int
-			if(numbers[x] > numbers[y]) {
+			if numbers[x] > numbers[y] {
 				bigNumber = numbers[x]
 				smallNumber = numbers[y]
 			} else {
 				bigNumber = numbers[y]
 				smallNumber = numbers[x]
 			}
-			if bigNumber % smallNumber == 0 {
+			if bigNumber%smallNumber == 0 {
 				return bigNumber / smallNumber
 			}
 		}
 	}
 	return 0
-}
-
-func MinMax(array []int) (int, int) {
-    var max int = array[0]
-    var min int = array[0]
-    for _, value := range array {
-        if max < value {
-            max = value
-        }
-        if min > value {
-            min = value
-        }
-    }
-    return min, max
 }
 
 func day2_getInput() [][]int {
@@ -80,7 +66,7 @@ func day2_getInput() [][]int {
 	146	1116	153	815	2212	2070	599	3018	2640	47	125	2292	165	2348	2694	184
 	1704	2194	1753	146	2063	1668	1280	615	163	190	2269	1856	150	158	2250	2459`
 
-	lines := strings.Split(input,"\n")
+	lines := strings.Split(input, "\n")
 	var ints [][]int
 	for _, line := range lines {
 		var lineInts []int
@@ -89,7 +75,7 @@ func day2_getInput() [][]int {
 			currentInt, _ := strconv.Atoi(r)
 			lineInts = append(lineInts, currentInt)
 		}
-		ints = append(ints,lineInts)
+		ints = append(ints, lineInts)
 	}
 	return ints
 }
