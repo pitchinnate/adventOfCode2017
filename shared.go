@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"log"
+	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -92,4 +93,16 @@ func arrayHasStringCount(strings []string, search string) int {
 		}
 	}
 	return count
+}
+
+func absInt(number int) int {
+	result := math.Abs(float64(number))
+	return int(result)
+}
+
+func reverseSlice(s []int) []int {
+	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+		s[i], s[j] = s[j], s[i]
+	}
+	return s
 }
