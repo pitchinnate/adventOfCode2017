@@ -106,3 +106,12 @@ func reverseSlice(s []int) []int {
 	}
 	return s
 }
+
+func arrayIntsFind(needle int, haystack []int) int {
+	for i, v := range haystack {
+		if v == needle {
+			return i
+		}
+	}
+	return -1
+}
