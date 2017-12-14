@@ -44,16 +44,25 @@ func day14_part1() {
 
 func day14_part2() {
 	rows := day14_input()
-	fullString := ""
+	var lines []string
 	for _, row := range rows {
+		tempString := ""
 		letters := strings.Split(row, "")
 		for _, letter := range letters {
 			value, _ := strconv.ParseUint(letter, 16, 32)
-			fullString += fmt.Sprintf("%04s", strconv.FormatInt(int64(value), 2))
+			tempString += fmt.Sprintf("%04s", strconv.FormatInt(int64(value), 2))
 		}
-		fullString += "\n"
+		lines = append(lines, tempString)
 	}
-	fmt.Print(fullString)
+	var grid [128][128]int
+	for y := 0; y < (len(lines) - 1); y++ {
+		letters := strings.Split(lines[y], "")
+		for x := 0; x < (len(letters) - 1); x++ {
+			tempInt, _ := strconv.Atoi(letters[x])
+			grid[y][x] = tempInt
+		}
+	}
+	log.Print(grid)
 }
 
 func day14_input2(input string) ([256]int, []int) {
