@@ -62,7 +62,12 @@ func day14_part2() {
 			grid[y][x] = tempInt
 		}
 	}
-	log.Print(grid)
+	//http://gregtrowbridge.com/a-basic-pathfinding-algorithm/
+	for y := 0; y < 128; y++ {
+		for x := 0; x < 128; x++ {
+
+		}
+	}
 }
 
 func day14_input2(input string) ([256]int, []int) {
